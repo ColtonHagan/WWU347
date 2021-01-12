@@ -1,0 +1,17 @@
+Activity Journal
+
+Name: Colton Hagan
+
+================================================================
+Start
+Estimated Time   0HH 30MM
+Plan: Rewrite prime.c so it is in line with our programming standards
+
+Complete
+Actual Time HH 40MM
+Observations:
+Pretty smooth sailing, just a couple errors about changing the name of a variable
+in only part of the file not all of it
+
+
+================================================================
