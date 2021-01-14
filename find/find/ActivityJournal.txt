@@ -4,13 +4,11 @@ Name: Colton Hagan
 
 ================================================================
 Start
-Estimated Time	1HH MM
-Plan: To complete the code in the find.c file by alternating writing code and testing.
+Estimated Time	45HH 0MM
+Plan: To finish find.c by alternating coding, testing, and bug fixing
 
 Complete
-Actual Time	HH MM
-Observations:
-(Lessons learned, problems encountered, obstacles overcome, etc.)
-
+Actual Time	1HH 30MM
+Observations: One main struggle where for an 30 min I had code failing, and couldn't figure out why, but it turned out i just had "" around a char not ''. Everything else went pretty well though. Although I am not sure if my anwsers are effecent.
 
 ================================================================
