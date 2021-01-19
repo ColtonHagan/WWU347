@@ -1,0 +1,13 @@
+Activity Journal
+
+Name: Colton Hagan
+
+================================================================
+Start
+Estimated Time	1HH 0MM
+Plan: To read through the provided librays (stdlib.h, stdio.h, and ctype.h) and the getChar() libray. Then make sure I know how to read input by just printing out the input char by char. Test this and work out errors. Then move on to the bulk of the assignment of finding chars, lines, and words alternating writing and testing code until my input for a varity of tests matches the unix wc function.
+
+Complete
+Actual Time	0HH 30MM
+Observations: This went incredably smooth, I basically had no issues as everything worked basically on the first try. The only small issue I had was figuring out that a new line could occur with either '\n' or '/0' since the file ends on a line. However, outside that and could basic coding mistakes on my end (forgetting something simple) everything went well. The whole proccess of reading in a txt file using getChar() instead of some other proccess where we use scanf to get a file name and then using a File variable we fetch it from our directory is also a way I would never have thought to do things.
+================================================================
