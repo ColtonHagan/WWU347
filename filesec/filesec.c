@@ -27,10 +27,10 @@ int main(int argc, char** argv) {
         strtok(outputFile, ".");
         strcat(outputFile, "_enc.txt");
         int encoded_file = open(outputFile, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-        char *current_char[0];
+        char current_char;
         // Reads and writes output
-        while (read(pFile, current_char, 1) == 1) {
-           char shifted = *current_char + 100;
+        while (read(pFile, &current_char, 1) == 1) {
+           char shifted = current_char + 100;
            write(encoded_file, &shifted, 1);
         }
 
@@ -45,11 +45,10 @@ int main(int argc, char** argv) {
         strtok(outputFile, ".");
         strcat(outputFile, "_dec.txt");
         int decoded_file = open(outputFile, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-        printf("%d\n", decoded_file);
-        char *current_char[0];
+        char current_char;
         // Reads and writes output
-        while (read(pFile, current_char, 1) == 1) {
-           char shifted = *current_char - 100;
+        while (read(pFile, &current_char, 1) == 1) {
+           char shifted = current_char - 100;
            write(decoded_file, &shifted, 1);
         }
 
