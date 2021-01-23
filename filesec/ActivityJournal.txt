@@ -1,0 +1,15 @@
+Activity Journal
+
+Name: Colton Hagan
+
+================================================================
+Start
+Estimated Time	0HH 45MM
+Plan: Start by just opening/closing a file, then printing contents of a file reading, then do the encoding shifting by 100, then the decoding, do testing between these steps and fix errors that pop up.
+
+Complete
+Actual Time	1HH 15MM
+Observations: Main issues where just were with inexperence with C, stuck for a bit not releasing my current_char needed to have a size declaired, and was using || not | when opening a file with multiple oflag. The main thing I gained was more general fimilarity with C, I didn't have much issues with the read/write/close/open files. 
+
+
+================================================================
