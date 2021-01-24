@@ -50,6 +50,7 @@ int main() {
   int i;
   printf("Enter upper bound:\n");
   scanf("%d", &upper_bound);
+  // this is a bug
   upper_bound = 50;
   // We know 1 and 2 are prime numbers
   primes[1] = 1;
