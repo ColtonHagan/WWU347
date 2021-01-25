@@ -1,0 +1,12 @@
+I graded commit d58741f of your repo since it was the newest commit before the Jan 13 11:59 deadline.
+A video of how I graded your assignment is available here:
+
+- https://asciinema.org/a/2eYZ0GItluIYylYKGTtG6OcMp
+
+If this video expires or does not work for any reason, please reach out to me!
+
+For the activity journal, the desired plan is basically an outline of how the code will work.  This is a bit of a unique assignment so no worries about a short-ish plan that boils down to "find bugs, fix them" but in general when you are implementing an assignment please talk about how you plan to do so in some details.  For instance, what steps your program will take.
+
+The user's input for the upper bound is ignored; the value 50 is always used.
+
+Nice work
