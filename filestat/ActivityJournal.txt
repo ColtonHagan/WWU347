@@ -1,0 +1,24 @@
+Activity Journal
+
+Name: Colton Hagan
+
+================================================================
+Start
+Estimated Time	0HH 30MM
+Plan: I plan to
+1) Get the details of the file with stats and st_mode 
+2) Check if the file is regular
+3) Format/Finish checking file type
+4) Get and check the time 
+5) Figure out how to formate the time using time.h 
+6) Finish and formate the last accessed time
+7) Check if the file is readable by user
+8) Formate for all user permissions
+9) Finish by replicating step 8 for group and other
+10) Double check everything
+With testing and bug-fixing between each step
+
+Complete
+Actual Time	0HH 45MM
+Observations: Most everything went smoothly, the biggest struggle was formatting the time, as it took me a few minutes to figure out how to use time.h properly, but outside of that I did not have much trouble. Overall I just learned more about using stat and how to use time.h (at least in some ways).  
+================================================================
