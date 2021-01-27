@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
     }
 
     //Gets the last time accessed
-    strftime(time, sizeof time, "%c", localtime(&last_time.tv_sec));
+    strftime(time, sizeof(time), "%c", localtime(&last_time.tv_sec));
     printf("Time of last access : %s\n", time);
 
     //Get the file permissions
