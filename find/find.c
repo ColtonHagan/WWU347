@@ -25,6 +25,7 @@ int find_ch_index(char string[], char ch) {
         }
         i++;
     }
+    // this is a mis-indented line since it's mixing tabs and spaces
 	return -1;
 }
 
@@ -54,6 +55,8 @@ char *find_ch_ptr(char *string, char ch) {
 int find_any_index(char string[], char stop[]) {
     int i = 0;
     //looks through string to see if any part of stop matchs
+	// looks like 4-wide tabs make this line up, ok.
+	// see if your editor can make them more consistent.
 	while(string[i] != '\0') {
         int j = 0;
         while(stop[j] != '\0') {
@@ -103,6 +106,8 @@ char *find_any_ptr(char *string, char* stop) {
  */
 char *find_substr(char *string, char* substr) {
     //checks to see if the substring is empty
+	// meant NULL here, as that's what you use for a pointer.
+	// the check still works but the types do not match.
     if(substr == '\0') {
         return string;
     }
