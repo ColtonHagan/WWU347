@@ -1,0 +1,20 @@
+I graded commit 7e22069 since it was the latest commit before the deadline.
+A video of my grading is available here:
+
+- https://asciinema.org/a/IxBs9foqBx892zIjdevElmbhf
+
+If this link doesn't work, please reach out to me.
+Feedback on your code is available at https://gitlab.cs.wwu.edu/haganc3/cs-347/-/tree/c-review-feedback
+
+Would have liked to see a bit more plan about the approach/algorithm to implement the functions.
+
+Compiler warnings:
+
+find.c:106:15: warning: comparison between pointer and zero character constant [-Wpointer-compare]
+     if(substr == '\0') {
+               ^~
+find.c:106:8: note: did you mean to dereference the pointer?
+     if(substr == '\0') {
+        ^
+
+Good job!  You're mixing tabs and spaces though.
