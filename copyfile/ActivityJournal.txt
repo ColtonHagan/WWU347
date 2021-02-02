@@ -1,0 +1,13 @@
+Activity Journal
+
+Name: Colton Hagan
+
+================================================================
+Start
+Estimated Time	0HH 30MM
+Plan: I think this should be fairly easy for me since I have some experence with file I/O. I will first read in a file and print the contents to the console, I will then write code to write the file, then I will write the code to deal with errors/ only one argument, through out this procces I will  check for errors and fix them when they appear.
+
+Complete
+Actual Time	1HH 0MM
+Observations: Everything went very well. Except for getting a buffer overflow in freads() that kept occuring and took some time to fix. Overall this was good review of file I/O and dealing with buffer overflows.
+================================================================
