@@ -37,12 +37,12 @@ int main(int argc, char *argv[]) {
     file_to_read = fopen(read_file_name,"r");
     if(file_to_read == NULL) {
         printf("ERROR : Failed to open file you are copying from.\n");
-	return 0;
+	return 1;
     }
     file_to_write = fopen(write_file_name,"w");
     if(file_to_write == NULL) {
         printf("ERROR : Failed to open file you are copying to.\n");
-	return 0;
+	return 1;
     }
 
     //Reads and writes the file
