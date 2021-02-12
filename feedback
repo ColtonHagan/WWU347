@@ -1,0 +1,11 @@
+I graded commit 1af7858 since it was the latest commit before the deadline.
+A video of my grading is available here:
+
+- https://asciinema.org/a/1fiAN1BWn21gAexDnPl8qHiId
+
+If this link doesn't work, please reach out to me.
+Feedback on your code is available at https://gitlab.cs.wwu.edu/haganc3/cs-347/-/tree/word-count-feedback
+
+Great job!
+
+Mixed tabs and spaces, on the same line sometimes.  See if your editor can fix these.  With 8 space tabs it looks alright but everything is initially indented too far.
