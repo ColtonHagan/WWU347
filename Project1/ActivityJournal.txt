@@ -1,0 +1,26 @@
+Activity Journal
+
+Name: Colton Hagan
+
+================================================================
+Start
+Estimated Time	5HH 0MM
+Plan:
+My current plan is to :
+1) get the argparse file working since I have a really good idea how to do so
+2) read in and print user input from the command line 
+4) builtin functions
+5) proccessline function
+6) write my own mkdir function
+7) add error checks and messages
+8) double check everything is working
+I will do incremental testing and error checking/handling throughout these steps
+
+Complete
+Actual Time	3HH MM
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+Overall I had a few issues, but most of them stemmed from my lack of general familiarity with c rather than specific concepts that we were working on. Although, I did have some small issues with malloc and when and where I should use it (which I improved on throughout the project) and struggled a bit on realizing I needed to put an exit in the child from fork. Overall I think I improved my C understanding, ability to work with a fork, and using makefile.
+
+
+================================================================
