@@ -18,6 +18,7 @@ int main(int argc, char** argv) {
     // If there is an incorrect input informs user proper usage
     if(strcmp(argv[1], "-e") != 0 && strcmp(argv[1], "-d") != 0) {
         printf("Usage:\n./filesec -e|-d [filename]\n");
+	// Should return/exit here
     }
     
     // Encodes new file
@@ -26,10 +27,12 @@ int main(int argc, char** argv) {
         strcpy(outputFile, file);
         strtok(outputFile, ".");
         strcat(outputFile, "_enc.txt");
+	// Mixing snake_case and camelCase variables
         int encoded_file = open(outputFile, O_WRONLY | O_CREAT | O_TRUNC, 0644);
         char current_char;
         // Reads and writes output
         while (read(pFile, &current_char, 1) == 1) {
+		// This is indented by 3 not 4
            char shifted = current_char + 100;
            write(encoded_file, &shifted, 1);
         }
