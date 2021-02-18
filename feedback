@@ -1,0 +1,25 @@
+I graded commit ac6e3d9 since it was the latest commit before the deadline.
+A video of my grading is available here:
+
+- https://asciinema.org/a/PVwNwKosU0yWyCqC2MfcJ3wyi
+
+If this link doesn't work, please reach out to me.
+Feedback on your code is available at https://gitlab.cs.wwu.edu/haganc3/cs-347/-/tree/file-io-feedback
+
+Great job!
+
+Some indentation is off, and your variables are not consistently formatted
+
+Segfaults without arguments:
+==28153== Command: ./filesec
+==28153==
+==28153== Invalid read of size 1
+==28153==    at 0x4EE7C50: __strcmp_sse2_unaligned (strcmp-sse2-unaligned.S:24)
+==28153==    by 0x108911: main (filesec.c:19)
+==28153==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==28153==
+==28153==
+==28153== Process terminating with default action of signal 11 (SIGSEGV)
+==28153==  Access not within mapped region at address 0x0
+==28153==    at 0x4EE7C50: __strcmp_sse2_unaligned (strcmp-sse2-unaligned.S:24)
+==28153==    by 0x108911: main (filesec.c:19)
