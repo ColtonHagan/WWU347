@@ -1,3 +1,10 @@
+/*
+Name: Colton Hagan
+Date: 3/4/21
+Class: CS347
+Programs: Takes in p6 image filename and creates a new p6 with laplacian filter applied,
+	  prints runtime of applying the filter, and reduces runtime using threads
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -37,13 +44,9 @@ int inRange(int color_value) {
 	return color_value;
 }
 
-/*This is the thread function. It will compute the new values for the region of image specified in params (start to start+size) using convolution.
-    (1) For each pixel in the input image, the filter is conceptually placed on top ofthe image with its origin lying on that pixel.
-    (2) The  values  of  each  input  image  pixel  under  the  mask  are  multiplied  by the corresponding filter values.
-    (3) The results are summed together to yield a single output value that is placed in the output image at the location of the pixel being processed on the input.
-
- */
-void *threadfn(void* param) { //yet this is void in code why
+/* This is the thread function, it takes in paramater, applies the filter to a given region
+   of the image using convolution, and updates the result image with the values found from the filter*/
+void *threadfn(void* param) {
 	struct parameter *params = (struct parameter*) param;
 	pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 	int laplacian[filterWidth][filterHeight] =
@@ -84,13 +87,8 @@ void *threadfn(void* param) { //yet this is void in code why
 	}
 	return NULL;
 }
-/*Create a new P6 file to save the filtered image in. Write the header block
- e.g. P6
-      Width Height
-      Max color value
- then write the image data.
- The name of the new file shall be "name" (the second argument).
- */
+
+/* Creates a new P6 image file writing both the header (using width and height) and pixel data*/
 void writeImage(PPMPixel *image, char *name, unsigned long int width, unsigned long int height) {
 	FILE *fp;
 	//Opens file
@@ -111,19 +109,8 @@ void writeImage(PPMPixel *image, char *name, unsigned long int width, unsigned l
 	fclose(fp);
 }
 
-/* Open the filename image for reading, and parse it.
-    Example of a ppm header:    //http://netpbm.sourceforge.net/doc/ppm.html
-    P6                  -- image format
-    # comment           -- comment lines begin with
-    ## another comment  -- any number of comment lines
-    200 300             -- image width & height
-    255                 -- max color value
-
- Check if the image format is P6. If not, print invalid format error message.
- Read the image size information and store them in width and height.
- Check the rgb component, if not 255, display error message.
- Return: pointer to PPMPixel that has the pixel data of the input image (filename)
- */
+/* Reads in a P6 file with the given filename header and pixel data,
+   checking to make sure the format and data instead the p6 file is correct*/
 PPMPixel *readImage(const char *filename, unsigned long int *width, unsigned long int *height) {
 	PPMPixel *img;
 	FILE *fp;
@@ -168,11 +155,9 @@ PPMPixel *readImage(const char *filename, unsigned long int *width, unsigned lon
 	return img;
 }
 
-/* Create threads and apply filter to image.
- Each thread shall do an equal share of the work, i.e. work=height/number of threads.
- Compute the elapsed time and store it in *elapsedTime (Read about gettimeofday).
- Return: result (filtered image)
- */
+
+/* Takes in the given image, and creates threads dividing up the work of applying the filters to the image,
+   it also finds the time it takes to do this*/
 PPMPixel *apply_filters(PPMPixel *image, unsigned long w, unsigned long h, double *elapsedTime) {
 	struct timeval start_time;
 	struct timeval end_time;
@@ -211,9 +196,9 @@ PPMPixel *apply_filters(PPMPixel *image, unsigned long w, unsigned long h, doubl
 }
 
 
-/*The driver of the program. Check for the correct number of arguments. If wrong print the message: "Usage ./a.out filename"
-    Read the image that is passed as an argument at runtime. Apply the filter. Print elapsed time in .3 precision (e.g. 0.006 s). Save the result image in a file called laplacian.ppm. Free allocated memory.
- */
+/*The driver of the program. Check for the correct number of argument.
+  Read the image that is passed as an argument. Apply the filter. 
+  Print elapsed time. Save the result image in a file called laplacian.ppm.*/
 int main(int argc, char *argv[]) {
 	//Checks if right number of args
 	if(argc != 2) {
@@ -231,5 +216,7 @@ int main(int argc, char *argv[]) {
 	final_image = apply_filters(img, w, h, &elapsedTime);
 	printf("Elapsed time : %.3f seconds\n", elapsedTime);
 	writeImage(final_image, "laplacian.ppm", w, h);
+	free(img);
+	free(final_image);
 	return 0;
 }
