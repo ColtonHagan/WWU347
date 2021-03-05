@@ -5,7 +5,7 @@
 #include <pthread.h>
 #include <string.h>
 
-#define THREADS 5
+#define THREADS 4
 
 #define filterWidth 3
 #define filterHeight 3
@@ -150,7 +150,7 @@ PPMPixel *readImage(const char *filename, unsigned long int *width, unsigned lon
 	}
 	ungetc(c, fp);
 	//reads image size information
-	fscanf(fp, "%ld %ld\n", width, height);
+	fscanf(fp, " %ld %ld\n", width, height);
 	//Reads rgb component and check if it is equal to RGB_MAX
 	int comp;
 	fscanf(fp, "%d\n", &comp);
