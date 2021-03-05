@@ -55,22 +55,22 @@ void *threadfn(void* param) {
 	   -1,  8, -1,
 	   -1, -1, -1,
 	};
-	int imageWidth = params->w;
-	int imageHeight = params->h;
+	int image_width = params->w;
+	int image_height = params->h;
 	int x_coordinate, y_coordinate, red, green, blue;
 	//Loops through original image 
-	for(int w = 0; w < imageWidth; w++) {
+	for(int w = 0; w < image_width; w++) {
 		for (int h = params->start; h < params->start + params->size; h++) {
 			red = blue = green = 0;
 			//Loops through filter
-			for(int iteratorFilterWidth = 0; iteratorFilterWidth < filterWidth; iteratorFilterWidth++) {
-				for(int iteratorFilterHeight = 0; iteratorFilterHeight < filterHeight; iteratorFilterHeight++) {
+			for(int i_filter_width = 0; i_filter_width < filterWidth; i_filter_width++) {
+				for(int i_filter_height = 0; i_filter_height < filterHeight; i_filter_height++) {
 					//Calculates rgb data for a given pixel
-					x_coordinate = (w - filterWidth / 2 + iteratorFilterWidth + imageWidth) % imageWidth;
-                                	y_coordinate = (h - filterHeight / 2 + iteratorFilterHeight + imageHeight) % imageHeight;
-					red += params->image[y_coordinate * imageWidth + x_coordinate].r * laplacian[iteratorFilterHeight][iteratorFilterWidth];
-					green += params->image[y_coordinate * imageWidth + x_coordinate].g * laplacian[iteratorFilterHeight][iteratorFilterWidth];
-					blue += params->image[y_coordinate * imageWidth + x_coordinate].b * laplacian[iteratorFilterHeight][iteratorFilterWidth];
+					x_coordinate = (w - filterWidth / 2 + i_filter_width + image_width) % image_width;
+                                	y_coordinate = (h - filterHeight / 2 + i_filter_height + image_height) % image_height;
+					red += params->image[y_coordinate * image_width + x_coordinate].r * laplacian[i_filter_height][i_filter_width];
+					green += params->image[y_coordinate * image_width + x_coordinate].g * laplacian[i_filter_height][i_filter_width];
+					blue += params->image[y_coordinate * image_width + x_coordinate].b * laplacian[i_filter_height][i_filter_width];
 				}
 			}
 			//Checks to see if RGB values are in range
@@ -79,9 +79,9 @@ void *threadfn(void* param) {
 			green = inRange(green);
 			//Locks threads and assigns new value
 			pthread_mutex_lock(&mutex);
-			params->result[h * imageWidth + w].r = red;
-			params->result[h * imageWidth + w].g = green;
-			params->result[h * imageWidth + w].b = blue;
+			params->result[h * image_width + w].r = red;
+			params->result[h * image_width + w].g = green;
+			params->result[h * image_width + w].b = blue;
 			pthread_mutex_unlock(&mutex);
 		}
 	}
@@ -154,7 +154,6 @@ PPMPixel *readImage(const char *filename, unsigned long int *width, unsigned lon
 	fclose(fp);
 	return img;
 }
-
 
 /* Takes in the given image, and creates threads dividing up the work of applying the filters to the image,
    it also finds the time it takes to do this*/

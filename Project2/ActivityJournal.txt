@@ -1,0 +1,23 @@
+Activity Journal
+
+Name: Colton Hagan
+
+================================================================
+Start
+Estimated Time	3HH 0MM
+Plan:
+My current plan is to :
+1) Read the given files header 
+2) Read the given files pixel data
+4) Write the the new file
+5) Write threadfn without threading 
+6) Add threading in apply_filter function
+7) Add join and mutex to deal with race conditions
+8) double check everything is working
+I will do incremental testing and error checking/handling throughout these steps
+
+Complete
+Actual Time	8HH MM
+Observations:
+I really struggled with the simplier elements of this assignment of reading/writing the file. I had several issues at first with not reading a new line charcter which was changing the color to be slightly off, I also had an issue where with multiple comments there was buffer overflow. However though these issues I got a much better understanding of how to gdb. The working with threads part, actually went exteremly well with minimal errors, I felt like I had a good grasp of this from lecture, and we went over how we where going to do it in class. However, this project help me understand the exact implentation. Overall I think I continued to improve my C understanding, knowledge of gdb, and how to use threads. 
+================================================================
