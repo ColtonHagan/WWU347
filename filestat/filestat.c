@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
     if(file_perm & S_IXUSR) {
        printf("Excutable\n");
     } else {
-       printf("Not excutable\n");
+       printf("Not executable\n");
     }
 
     //Permissions for group
@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
     if(file_perm & S_IXGRP) {
        printf("Excutable\n");
     } else {
-       printf("Not excutable\n");
+       printf("Not executable\n");
     }
 
     //Permissions for other
@@ -92,6 +92,6 @@ int main(int argc, char *argv[]) {
     if(file_perm & S_IXOTH) {
        printf("Excutable\n");
     } else {
-       printf("Not excutable\n");
+       printf("Not executable\n");
     }
 }
