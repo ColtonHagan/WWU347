@@ -72,6 +72,7 @@ void multiply_matrices(double *A, double *B, double *C) {
 
 		if(pthread_create(&threads[i], NULL, thread_fn, (void*) data) != 0) {
 			printf("Error while creating threads\n");
+			exit(1);
 		}
 	}
 	//joins threads for safty
