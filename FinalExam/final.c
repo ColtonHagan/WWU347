@@ -87,7 +87,7 @@ void print_matrix (double *A, int x, int y) {
 	for(int i = 0; i < x; i++) {
 		printf("Row %d:", i);
 		for(int j = 0; j < y; j++) {
-			printf("\t%f", A[y*i + j]);
+			printf("\t%.1f", A[y*i + j]);
 		}
 		printf("\n");
 	}
