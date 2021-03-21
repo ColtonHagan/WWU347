@@ -48,6 +48,8 @@ int inRange(int color_value) {
    of the image using convolution, and updates the result image with the values found from the filter*/
 void *threadfn(void* param) {
 	struct parameter *params = (struct parameter*) param;
+	// This mutex is not declared globally or statically so you actually have a per-thread mutex which does nothing for synchronization whatsoever
+	// fortunately this problem does not require a mutex at all to solve, since no two threads ever write to the same pixel.
 	pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 	int laplacian[filterWidth][filterHeight] =
 	{
@@ -169,6 +171,7 @@ PPMPixel *apply_filters(PPMPixel *image, unsigned long w, unsigned long h, doubl
 	int work = h/THREADS;
 	for(int i = 0; i < THREADS; i++) {
 		struct parameter *param = &params[i];
+		// declaring an array on the stack with [] means you don't need to do a malloc for individual elements like below
 		param = malloc(sizeof(struct parameter));
 		param->image = image;
 		param->result = result;
@@ -181,6 +184,7 @@ PPMPixel *apply_filters(PPMPixel *image, unsigned long w, unsigned long h, doubl
 		} else {
 			param->size = work;
 		}
+		// this could fail
 		pthread_create(&threads[i], NULL, threadfn, (void*) param);
 	}
 	//Lets threads wait till they all finish their work.
