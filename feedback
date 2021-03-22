@@ -1,0 +1,15 @@
+I graded commit 76e4eee since it was the latest commit before the deadline.
+A video of my grading is available here:
+
+- https://asciinema.org/a/Y7fjr7Kopt4WYPd7ZJVBVye0i
+
+If this link doesn't work, please reach out to me.
+Feedback on your code is available at https://gitlab.cs.wwu.edu/haganc3/cs-347/-/tree/project2-feedback
+
+Compare your image output here: https://studentweb.cs.wwu.edu/~strattj2/347-project-2/79ad7700-7408-47af-8559-3b778b0b583e/
+
+Good job
+
+Missing error check
+
+Some unneeded memory/concurrency management code; see comments
